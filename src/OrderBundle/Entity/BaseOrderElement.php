@@ -6,8 +6,8 @@ use Sonata\Component\Order\OrderInterface;
 use Sonata\Component\Order\OrderElementInterface;
 use Sonata\Component\Product\ProductInterface;
 
-use Application\Sonata\OrderBundle\Entity\Order;
-use Application\Sonata\ProductBundle\Entity\Delivery;
+use Sonata\OrderBundle\Entity\BaseOrder;
+use Sonata\ProductBundle\Entity\BaseDelivery;
 
 /**
  * Sonata\OrderBundle\Entity\BaseOrderElement
@@ -562,7 +562,7 @@ abstract class BaseOrderElement implements OrderElementInterface
      */
     public static function getStatusList()
     {
-        return Order::getStatusList();
+        return BaseOrder::getStatusList();
     }
 
     /**
@@ -581,7 +581,7 @@ abstract class BaseOrderElement implements OrderElementInterface
      */
     public static function getDeliveryStatusList()
     {
-        return Delivery::getStatusList();
+        return BaseDelivery::getStatusList();
     }
 
     /**
